@@ -11,25 +11,45 @@ if (!isset($_SESSION["user_id"]) ||
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Reviewer Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviewer Dashboard - Lab Tracking</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-<h1>Reviewer Dashboard</h1>
+<main class="dashboard role-dashboard">
+    <header class="role-dashboard__header">
+        <div>
+            <p class="auth-dashboard__eyebrow">LAB TRACKING SYSTEM</p>
+            <h1>Reviewer Dashboard</h1>
+        </div>
+        <span class="role-dashboard__role">Reviewer</span>
+    </header>
 
-<h3>Welcome, <?php
-echo htmlspecialchars($_SESSION["full_name"]);
-?>!</h3>
+    <section class="role-dashboard__welcome">
+        <h2>Welcome, <?= htmlspecialchars($_SESSION["full_name"], ENT_QUOTES, "UTF-8") ?></h2>
+        <p>Review and manage laboratory test results from your workspace.</p>
+    </section>
 
-<p>You are logged in as a Reviewer.</p>
+    <section class="role-dashboard__section" aria-labelledby="review-heading">
+        <h2 id="review-heading">Your workspace</h2>
+        <a class="role-dashboard__link" href="review.php">
+            <span class="role-dashboard__link-icon" aria-hidden="true">✓</span>
+            <span>
+                <strong>Review Test Results</strong>
+                <small>View and review submitted test results</small>
+            </span>
+            <span class="role-dashboard__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+    </section>
 
-<ul>
-    <li><a href="review.php">Review Test Results</a></li>
-</ul>
-
-<a href="../logout.php">Logout</a>
+    <footer class="role-dashboard__footer">
+        <a class="auth-dashboard__button auth-dashboard__button--secondary" href="../logout.php">Log out</a>
+    </footer>
+</main>
 
 </body>
 </html>

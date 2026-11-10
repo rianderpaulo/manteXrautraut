@@ -1,0 +1,32 @@
+
+/* DASHBOARD CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.card {
+    background: #e0f2fe;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 15px;
+    color: #164e63;
+}
+
+.card h2 {
+    font-size: 30px;
+    color: #0284c7;
+}
+
+@media (max-width: 700px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

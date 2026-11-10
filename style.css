@@ -159,6 +159,117 @@ body {
     color: #166534;
 }
 
+.role-dashboard {
+    max-width: 860px;
+    padding: 36px;
+}
+
+.role-dashboard__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.role-dashboard__header .auth-dashboard__eyebrow {
+    margin-bottom: 8px;
+}
+
+.role-dashboard__header h1 {
+    margin: 0;
+}
+
+.role-dashboard__role {
+    padding: 8px 12px;
+    border-radius: 20px;
+    background-color: #e0f2fe;
+    color: #075985;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.role-dashboard__welcome {
+    padding: 28px 0;
+}
+
+.role-dashboard__welcome h2,
+.role-dashboard__section h2 {
+    margin: 0;
+}
+
+.role-dashboard__welcome p {
+    margin: 8px 0 0;
+    color: #64748b;
+}
+
+.role-dashboard__section {
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.role-dashboard__section h2 {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.role-dashboard__link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 7px;
+    background-color: #f8fafc;
+    color: #164e63;
+}
+
+.role-dashboard__link:hover {
+    background-color: #e0f2fe;
+    text-decoration: none;
+}
+
+.role-dashboard__link-icon {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    place-items: center;
+    border-radius: 10px;
+    background-color: #cffafe;
+    color: #0e7490;
+    font-weight: bold;
+}
+
+.role-dashboard__link strong,
+.role-dashboard__link small {
+    display: block;
+}
+
+.role-dashboard__link small {
+    margin-top: 4px;
+    color: #64748b;
+}
+
+.role-dashboard__arrow {
+    margin-left: auto;
+    color: #0284c7;
+    font-size: 20px;
+}
+
+.role-dashboard__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+.role-dashboard__footer .auth-dashboard__button {
+    display: inline-block;
+    min-width: 120px;
+    text-align: center;
+}
+
 h1, h2, h3 {
     color: #164e63;
 }
@@ -269,6 +380,18 @@ tr:nth-child(even) {
     .auth-card {
         margin: 3vh auto;
         padding: 28px 22px;
+    }
+
+    .role-dashboard {
+        padding: 22px;
+    }
+
+    .role-dashboard__header {
+        align-items: flex-start;
+    }
+
+    .role-dashboard__section {
+        padding: 16px;
     }
 
     table {

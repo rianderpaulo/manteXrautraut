@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <main class="auth-card">
-    <div class="auth-dashboard__icon" aria-hidden="true">L</div>
+    <div class="auth-dashboard__icon" aria-hidden="true">LTS</div>
     <p class="auth-dashboard__eyebrow">LAB TRACKING SYSTEM</p>
     <h1>Welcome back</h1>
     <p class="auth-card__description">Log in to continue to your laboratory workspace.</p>
