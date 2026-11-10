@@ -65,33 +65,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Register - Laboratory System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Create Analyst Account</h2>
+<main class="auth-card">
+    <div class="auth-dashboard__icon" aria-hidden="true">L</div>
+    <p class="auth-dashboard__eyebrow">LAB TRACKING SYSTEM</p>
+    <h1>Create an account</h1>
+    <p class="auth-card__description">Register to get started with the laboratory system.</p>
 
-<p><?php echo htmlspecialchars($message); ?></p>
+    <?php if ($message !== ""): ?>
+        <p class="auth-message <?php echo strpos($message, "successful") !== false ? "auth-message--success" : ""; ?>"
+           role="status"><?php echo htmlspecialchars($message, ENT_QUOTES, "UTF-8"); ?></p>
+    <?php endif; ?>
 
-<form method="POST">
+    <form method="POST">
+        <label for="fullname">Full name</label>
+        <input id="fullname" type="text" name="fullname" autocomplete="name" required>
 
-    <label>Full Name:</label><br>
-    <input type="text" name="fullname" required>
-    <br><br>
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" autocomplete="username" required>
 
-    <label>Username:</label><br>
-    <input type="text" name="username" required>
-    <br><br>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" autocomplete="new-password" required>
 
-    <label>Password:</label><br>
-    <input type="password" name="password" required>
-    <br><br>
+        <button class="auth-card__submit" type="submit">Create account</button>
+    </form>
 
-    <button type="submit">Register</button>
-
-</form>
-
-<p>Already have an account?
-<a href="login.php">Login here</a></p>
+    <p class="auth-card__footer">Already have an account? <a href="login.php">Log in</a></p>
+</main>
 
 </body>
 </html>

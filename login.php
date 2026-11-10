@@ -58,29 +58,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Login - Laboratory System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Laboratory System Login</h2>
+<main class="auth-card">
+    <div class="auth-dashboard__icon" aria-hidden="true">L</div>
+    <p class="auth-dashboard__eyebrow">LAB TRACKING SYSTEM</p>
+    <h1>Welcome back</h1>
+    <p class="auth-card__description">Log in to continue to your laboratory workspace.</p>
 
-<p><?php echo htmlspecialchars($message); ?></p>
+    <?php if (isset($_GET["logged_out"])): ?>
+        <p class="auth-message auth-message--success" role="status">You have been logged out.</p>
+    <?php endif; ?>
+    <?php if ($message !== ""): ?>
+        <p class="auth-message" role="alert"><?php echo htmlspecialchars($message, ENT_QUOTES, "UTF-8"); ?></p>
+    <?php endif; ?>
 
-<form method="POST">
+    <form method="POST">
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" autocomplete="username" required>
 
-    <label>Username:</label><br>
-    <input type="text" name="username" required>
-    <br><br>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" autocomplete="current-password" required>
 
-    <label>Password:</label><br>
-    <input type="password" name="password" required>
-    <br><br>
+        <button class="auth-card__submit" type="submit">Log in</button>
+    </form>
 
-    <button type="submit">Login</button>
-
-</form>
-
-<p>Don't have an account?
-<a href="register.php">Register here</a></p>
+    <p class="auth-card__footer">Don't have an account? <a href="register.php">Create one</a></p>
+</main>
 
 </body>
 </html>
